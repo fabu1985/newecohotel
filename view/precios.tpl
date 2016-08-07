@@ -146,7 +146,7 @@
               [lista]
                 <tr>
                   <td>{description}</td>
-                  <td>${prize}</td>
+                  <td>${price}</td>
                   <td>{last_update}</td>
                 </tr>
               [lista]               

@@ -31,7 +31,7 @@ Class _Reserva{
 				check_out, 
 				precio, 
 				DATEDIFF(check_out,check_in) as total_dias, 
-				(c.prize * DATEDIFF(check_out,check_in) * (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))) as precio_total 
+				(c.price * DATEDIFF(check_out,check_in) * (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))) as precio_total 
 				FROM reserva r 
 				INNER JOIN category c 
 					on c.id=r.habitacion 
@@ -53,7 +53,7 @@ Class _Reserva{
 			$query = 'SELECT nro, user_id, (select concat(u.first_name, \' \', u.last_name) from user u where u.id=r.user_id) nombre, 
 room_id, habitacion, estado, check_in, check_out, precio, 
 DATEDIFF(check_out,check_in) as total_dias, 
-(c.prize * DATEDIFF(check_out,check_in) * 
+(c.price * DATEDIFF(check_out,check_in) * 
  (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))
 ) as precio_total 
 FROM reserva r INNER JOIN category c on c.id=r.habitacion where 
@@ -74,7 +74,7 @@ FROM reserva r INNER JOIN category c on c.id=r.habitacion where
 			$query = "SELECT nro, user_id, (select concat(u.first_name, ' ', u.last_name) from user u where u.id=r.user_id) nombre, 
 room_id, habitacion, estado, check_in, check_out, precio, 
 DATEDIFF(check_out,check_in) as total_dias, 
-(c.prize * DATEDIFF(check_out,check_in) * 
+(c.price * DATEDIFF(check_out,check_in) * 
  (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))
 ) as precio_total 
 FROM reserva r INNER JOIN category c on c.id=r.habitacion 
