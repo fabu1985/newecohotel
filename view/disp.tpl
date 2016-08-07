@@ -16,12 +16,13 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav side-nav">
             <li class="active"><a href="{link}main/reservar"><i class="fa fa-building-o"></i> Consultar Disponibilidad</a></li>
-            <li style="padding-left: 16px; color: green;"><b>OPCIONES DE ADMINISTRADOR</b></li>
+            <li style="{hideAdminOptions}padding-left: 16px; color: green;"><b>OPCIONES DE ADMINISTRADOR</b></li>
             <li style="{hideAdminOptions}"><a href="{link}admin"><i class="fa fa-edit"></i> Reservas Pendientes</a></li>
             <li style="{hideAdminOptions}"><a href="{link}admin/room"><i class="fa fa-building-o"></i> Gestión de Servicios</a></li>
             <li><a href="{link}admin/user" style="{hideAdminOptions}"><i class="fa fa-users"></i> Usuarios</a></li>
             <li style="{hideAdminOptions}"><a href="{link}admin/habitaciones"><i class="fa fa-building-o"></i> Habitaciones</a></li>
             <li style="{hideAdminOptions}"><a href="{link}admin/reporte"><i class="fa fa-edit"></i> Reportes</a></li>
+            <li><a href="{link}main/misreservas"><i class="fa fa-user"></i> Mis  Reservas</a></li>
             <li><a href="{link}main/profile"><i class="fa fa-user"></i> Perfil</a></li>
             <li><a href="{link}login/logout"><i class="fa fa-power-off"></i> Log out</a></li>
           </ul>
