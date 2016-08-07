@@ -89,7 +89,6 @@
                         <th>Check in</th>
                         <th>Check out</th>
                         <th>Total</th>
-                        <th>Eliminar <i class="fa"></i></th>
                       </tr>
                     </thead>
                     <tbody id="resultado">
@@ -100,7 +99,6 @@
                         <td>{check_in}</td>
                         <td>{check_out}</td>
                         <td>${precio}</td>
-                        <td><a href="#"><i class="fa fa-trash-o fa-1x col-lg-4 decline" tag="{nro}"></i></td>
                       </tr>
                       [listaPendientes]
                   </table>

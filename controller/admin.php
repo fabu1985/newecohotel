@@ -169,7 +169,7 @@ class Admin{
 				));
 			
 			$data = array(
-				"titulo" => '<br><h1><small class="titleSmall">Estadistica de consumos anual</small></h1>',
+				"titulo" => '<br><h1><small class="titleSmall">Estadística de consumos del año actual</small></h1>',
 				"primersemestre" => $primersemestre,
 				"segundosemestre" => $segundosemestre
 			);

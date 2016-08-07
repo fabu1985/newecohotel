@@ -38,7 +38,12 @@
       </nav>
 
       <div id="page-wrapper">
-
+    <div style="width: 730px;  font-family:sans-serif;">
+      {titulo}
+      {primersemestre}
+      <br><br>
+      {segundosemestre}
+    </div>
         <div class="row">
           <div class="col-lg-12">
             <h1><small class="titleSmall">Gestión de Reportes</small></h1>
@@ -145,19 +150,4 @@
               <a href="{link}web\ConsumoDeServicios.csv" target="_blank"> Descargar</a>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </div><!-- /.row -->
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-        </div>
-
-  
-  
-    <div style="width: 730px;  font-family:sans-serif;">
-      {titulo}
-      {primersemestre}
-      <br><br>
-      {segundosemestre}
-    </div>
   
