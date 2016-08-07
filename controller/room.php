@@ -69,7 +69,6 @@ class Room{
 		if (!empty($_POST)){
 			$pageServices = true;
 			$room->setNumber($_POST["numero"]);
-			var_dump($_POST);
 			if (isset($_POST["status"])) {
 				$room->setStatus($_POST["status"]);
 				$pageServices = true;
