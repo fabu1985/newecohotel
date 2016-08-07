@@ -57,6 +57,7 @@ class Reservar{
 							"errormsj" => $errorMsj,
 							"username" => session::getValue("username")
 							);
+						Session::setvalue('errormsj', $errorMsj);
 			    		header("location: ".HOME."main/reservar");
 			    	}else{	
 						$data = array(
@@ -158,7 +159,6 @@ class Reservar{
 	}
 
 	public static function confirmar(){
-
 		if (isset($_POST) && !empty($_POST['id'])){
 			$reserva = new _registration();
 			$reserva->setRoom_id($_POST['id']);

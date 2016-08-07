@@ -143,9 +143,22 @@
                     [listaServicios]
                   </tdoby>
                 </table>
-              <a href="{link}web\ConsumodeServicios.csv" target="_blank"> Descargar</a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="{link}web\ConsumoDeServicios.csv" target="_blank"> Descargar</a>&nbsp;&nbsp;&nbsp;&nbsp;
             </div>
           </div><!-- /.row -->
         </div>
-    <div id="myfirstchart" style="height: 250px;"></div>
-      </div><!-- /#page-wrapper -->
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+
+  
+  
+    <div style="width: 730px;  font-family:sans-serif;">
+      {titulo}
+      {primersemestre}
+      <br><br>
+      {segundosemestre}
+    </div>
+  

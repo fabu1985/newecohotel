@@ -75,10 +75,11 @@ public function saveservice($habitacion, $servicio){
 			`category_id`= '.$this->category_id.' 
 			WHERE number = '.$this->number;
 		}else{
-			$query = 'UPDATE `room` SET  
+			/*$query = 'UPDATE `room` SET  
 			`status`= '.$this->status.'
-			WHERE number = '.$this->number;
+			WHERE number = '.$this->number;*/
 		}
+		echo $query;
 		if ($this->dbc->query($query)){
 		}else{
 //			echo var_dump($this->dbc);
@@ -276,85 +277,6 @@ public function saveservice($habitacion, $servicio){
 		}else{
 			die('Error de Conexion con la DB: '.$query);
 		}	
-	}
-
-	public function obtenerDatosGrafica(){
-		$arrayDatos = array("01","02","03","04","05","06","07","08","09","10","11","12");
-		$query = "";
-		$wifiArray = array();
-		$desayunoArray = array();
-		$almuerzoArray = array();
-		$meriendaArray = array();
-		$cenaArray = array();
-		$resultArray = array();
-		foreach ($arrayDatos as $mes) {
-			$query = "SELECT
-						(SELECT count(1) FROM `services` WHERE `servicio` = 'Wifi' AND extract(month FROM `fecha`) = $mes) WIFI,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Desayuno' AND extract(month FROM `fecha`) = $mes) Desayuno,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Almuerzo' AND extract(month FROM `fecha`) = $mes) Almuerzo,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Merienda' AND extract(month FROM `fecha`) = $mes) Merienda,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Cena' AND extract(month FROM `fecha`) = $mes) Cena";
-    		if ($result = $this->dbc->query($query)){
-				$newArray = Ftn::toArray($result);
-				//var_dump($newArray["0"]["WIFI"]);
-				$wifiArray[$this->obtenerMes($mes)] = $newArray["0"]["WIFI"];
-				$desayunoArray[$this->obtenerMes($mes)] = $newArray["0"]["Desayuno"];
-				$almuerzoArray[$this->obtenerMes($mes)] = $newArray["0"]["Almuerzo"];
-				$meriendaArray[$this->obtenerMes($mes)] = $newArray["0"]["Merienda"];
-				$cenaArray[$this->obtenerMes($mes)] = $newArray["0"]["Cena"];
-				//array_push($wifiArray, ($mes => $newArray["0"]["WIFI"]));
-			}else{
-				die('Error de Conexion con la DB: '.$query);
-			}
-		}
-		array_push($resultArray, $wifiArray);
-		array_push($resultArray, $desayunoArray);
-		array_push($resultArray, $almuerzoArray);
-		array_push($resultArray, $meriendaArray);
-		array_push($resultArray, $cenaArray);
-		return $resultArray;
-		
-	}
-
-	private function obtenerMes($mes){
-		switch ($mes) {
-			case '01':
-				return "Enero";
-				break;
-			case '02':
-				return "Febrero";
-				break;
-			case '03':
-				return "Marzo";
-				break;
-			case '04':
-				return "Abril";
-				break;
-			case '05':
-				return "Mayo";
-				break;
-			case '06':
-				return "Junio";
-				break;
-			case '07':
-				return "Julio";
-				break;
-			case '08':
-				return "Agosto";
-				break;
-			case '09':
-				return "Septiembre";
-				break;
-			case '10':
-				return "Octubre";
-				break;
-			case '11':
-				return "Noviembre";
-				break;
-			case '12':
-				return "Diciembre";
-				break;
-		}
 	}
 
 	public function setId($id){

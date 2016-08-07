@@ -29,7 +29,8 @@ $(function(){
 	$(".savers").on('click', function(){
 		var roomId = $(".savers").attr('tag');
 		if (confirm('Confirmar Reserva')){
-			var url =  'reservar/confirmar';
+			//var url =  'reservar/confirmar';
+			var url = $(".savers").attr('url');
 	        $.post(url, 
 	        	{id: roomId,
 	        	 habitacion: $(".savers").attr('habitacion'),
@@ -38,7 +39,9 @@ $(function(){
 	        	 to: $('#to'+roomId).text()
 	            },
 			    function(data,status){
-			      window.location.href = "main/misreservas";
+			      //window.location.href = "main/misreservas";
+			      var newurl = url.replace('reservar/confirmar','main/misreservas');
+			      $(location).attr('href', newurl);
 			    }
 			);
 	    }

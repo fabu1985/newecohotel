@@ -1,5 +1,6 @@
-2;Desayuno;25;2016-06-30
-3;Merienda;25;2016-06-20
-2;Cena;55;2016-06-14
-3;Almuerzo;50;2016-06-27
-2;Desayuno;25;2016-06-28
+Nro_Habitación;Servicio;Precio;Fecha
+2;Desayuno;60;2016-08-06
+4;Wifi;15;2016-08-06
+2;Wifi;15;2016-08-06
+;;;;
+"Jefe de Reserva:";"Mendez, Juan";Fecha:;07-08-2016

@@ -121,7 +121,59 @@ class Admin{
 
 	public static function Reporte(){
 		if(session::isAdmin()){
-			View::parse("reporte");
+			$primersemestre = new GoogChart();
+			$segundosemestre = new GoogChart();
+			$color = array(
+				'#dcdf12',
+				'#99C754',
+				'#54C7C5',
+				'#999999',
+				'#0c0b0b'
+			);
+			$room = new _room();
+			$arrayDatos = $room->obtenerDatosGrafica();
+
+			$dataMultiple1 = array( 
+				'WIFI' => array_slice($arrayDatos[0], 0 , 6),
+				'Desayuno' => array_slice($arrayDatos[1], 0 , 6),
+				'Almuerzo' => array_slice($arrayDatos[2], 0 , 6),
+				'Merienda' => array_slice($arrayDatos[3], 0 , 6),
+				'Cena' => array_slice($arrayDatos[4], 0 , 6)
+			);
+
+			$primersemestre->setChartAttrs( array(
+				'type' => 'bar-vertical',
+				'title' => 'Primer Semestre',
+				'data' => $dataMultiple1,
+				'size' => array( 950, 200 ),
+				'color' => $color,
+				'labelsXY' => true,
+				));
+
+			$dataMultiple2 = array( 
+				'WIFI' => array_slice($arrayDatos[0], 6),
+				'Desayuno' => array_slice($arrayDatos[1], 6),
+				'Almuerzo' => array_slice($arrayDatos[2], 6),
+				'Merienda' => array_slice($arrayDatos[3], 6),
+				'Cena' => array_slice($arrayDatos[4], 6)
+			);
+
+			/* # Chart 2 # */
+			$segundosemestre->setChartAttrs( array(
+				'type' => 'bar-vertical',
+				'title' => 'Segundo Semestre',
+				'data' => $dataMultiple2,
+				'size' => array( 950, 200 ),
+				'color' => $color,
+				'labelsXY' => true,
+				));
+			
+			$data = array(
+				"titulo" => '<br><h1><small class="titleSmall">Estadistica de consumos anual</small></h1>',
+				"primersemestre" => $primersemestre,
+				"segundosemestre" => $segundosemestre
+			);
+			View::parse("reporte",$data);
 		}else{
 			header("location: ".HOME);
 		}	

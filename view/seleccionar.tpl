@@ -73,7 +73,7 @@
                           <td>{total_dias}</td>
                           <td>${precio_total}</td>
                           <td style="text-align:center;">
-                            <i class="fa fa-thumbs-o-up savers" tag="{room_id}" habitacion="{nro}" precio="{precio_total}"></i>
+                            <i class="fa fa-thumbs-o-up savers" url="{link}reservar/confirmar" tag="{room_id}" habitacion="{nro}" precio="{precio_total}"></i>
                           </td>
                       </tr>
                       [listaHab]
