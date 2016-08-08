@@ -140,9 +140,9 @@
                     [listaServicios]
                     <tr>
                       <td>{habitacion}</td>
-                      <td>{servicio}</td>
+                      <td>{service}</td>
                       <td>{precio}</td>
-                      <td>{fecha}</td>
+                      <td>{servicedate}</td>
                     </tr>
                     [listaServicios]
                   </tdoby>

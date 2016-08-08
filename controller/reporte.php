@@ -87,9 +87,9 @@ class Reporte{
 						foreach ($listaServicios  as $list) {
 							$linea  = array(
 								$list['habitacion'],
-								$list['servicio'],
+								$list['service'],
 								$list['precio'],
-								$list['fecha']
+								$list['servicedate']
 								);
 							
 						    fputcsv($fp,  $linea, $sep);			

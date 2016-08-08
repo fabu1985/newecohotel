@@ -35,32 +35,32 @@ Class _Room{
 }
 
 
-public function saveservice($habitacion, $servicio){
+public function saveservice($habitacion, $service){
 	$precio = 0;
 	//$fecha = date('Y-m-1',time());
-	$fecha = date('Y-m-d');
-	$nuevafecha = strtotime ( '-0 day' , strtotime ( $fecha ) ) ;
+	$servicedate = date('Y-m-d');
+	$nuevafecha = strtotime ( '-0 day' , strtotime ( $servicedate ) ) ;
 	$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
-	if($servicio == 'Wifi'){
+	if($service == 'Wifi'){
 		$precio = '15';
 	}
-	if($servicio == 'Desayuno'){
+	if($service == 'Desayuno'){
 		$precio = '60';
 	}
-	if($servicio == 'Almuerzo'){
+	if($service == 'Almuerzo'){
 		$precio = '90';
 	}
-	if($servicio == 'Merienda'){
+	if($service == 'Merienda'){
 		$precio = '60';
 	}
-	if($servicio == 'Cena'){
+	if($service == 'Cena'){
 		$precio = '120';
 	}
 	$query = "INSERT INTO services(
 		habitacion,
-		servicio,
+		service,
 		precio,
-		fecha) values ('$habitacion', '$servicio', '$precio', '$nuevafecha')";
+		servicedate) values ('$habitacion', '$service', '$precio', '$nuevafecha')";
 		if ($this->dbc->query($query)){
 		}else{
 			die('Error de Conexion con la DB: '.$query);
@@ -114,7 +114,7 @@ public function saveservice($habitacion, $servicio){
 		}
 
 	public function listaServicios($desde='', $hasta=''){
-		$query = 'SELECT s.* from services s where fecha >= "'.$desde.'" and fecha <= "'.$hasta.'" order by id desc';
+		$query = 'SELECT s.* from services s where servicedate >= "'.$desde.'" and servicedate <= "'.$hasta.'" order by id desc';
 			if ($result = $this->dbc->query($query)){
 				$lista = Ftn::toArray($result);
 				foreach ($lista as $key => $value) {
@@ -132,7 +132,7 @@ public function saveservice($habitacion, $servicio){
 		}
 
 	public function listaServiciosRegistrados($param=''){
-		$query = 'SELECT s.* from services s where fecha = curdate() order by habitacion asc';
+		$query = 'SELECT s.* from services s where servicedate = curdate() order by habitacion asc';
 			if ($result = $this->dbc->query($query)){
 				$lista = Ftn::toArray($result);
 				foreach ($lista as $key => $value) {
@@ -289,11 +289,11 @@ public function saveservice($habitacion, $servicio){
 		$resultArray = array();
 		foreach ($arrayDatos as $mes) {
 			$query = "SELECT
-						(SELECT count(1) FROM `services` WHERE `servicio` = 'Wifi' AND extract(month FROM `fecha`) = $mes) WIFI,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Desayuno' AND extract(month FROM `fecha`) = $mes) Desayuno,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Almuerzo' AND extract(month FROM `fecha`) = $mes) Almuerzo,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Merienda' AND extract(month FROM `fecha`) = $mes) Merienda,
-    					(SELECT count(1) FROM `services` WHERE `servicio` = 'Cena' AND extract(month FROM `fecha`) = $mes) Cena";
+						(SELECT count(1) FROM `services` WHERE `service` = 'Wifi' AND extract(month FROM `servicedate`) = $mes) WIFI,
+    					(SELECT count(1) FROM `services` WHERE `service` = 'Desayuno' AND extract(month FROM `servicedate`) = $mes) Desayuno,
+    					(SELECT count(1) FROM `services` WHERE `service` = 'Almuerzo' AND extract(month FROM `servicedate`) = $mes) Almuerzo,
+    					(SELECT count(1) FROM `services` WHERE `service` = 'Merienda' AND extract(month FROM `servicedate`) = $mes) Merienda,
+    					(SELECT count(1) FROM `services` WHERE `service` = 'Cena' AND extract(month FROM `servicedate`) = $mes) Cena";
     		if ($result = $this->dbc->query($query)){
 				$newArray = Ftn::toArray($result);
 				//var_dump($newArray["0"]["WIFI"]);
