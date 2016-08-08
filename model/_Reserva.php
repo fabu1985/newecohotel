@@ -26,7 +26,7 @@ Class _Reserva{
 				where u.id=r.user_id) nombre, 
 				room_id, 
 				habitacion, 
-				estado, 
+				status_res, 
 				check_in, 
 				check_out, 
 				precio, 
@@ -35,7 +35,7 @@ Class _Reserva{
 				FROM reserva r 
 				INNER JOIN category c 
 					on c.id=r.habitacion 
-				where estado = '.$estado;
+				where status_res = '.$estado;
 			if ($desde != '' && $hasta != ''){
 				$whereDates = ' and check_in >= "'.$desde.'" and check_out <= "'.$hasta.'"';
 				$query = $query.$whereDates;
@@ -51,7 +51,7 @@ Class _Reserva{
 
 	public function buscar($param){
 			$query = 'SELECT nro, user_id, (select concat(u.first_name, \' \', u.last_name) from user u where u.id=r.user_id) nombre, 
-room_id, habitacion, estado, check_in, check_out, precio, 
+room_id, habitacion, status_res, check_in, check_out, precio, 
 DATEDIFF(check_out,check_in) as total_dias, 
 (c.price * DATEDIFF(check_out,check_in) * 
  (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))
@@ -72,13 +72,13 @@ FROM reserva r INNER JOIN category c on c.id=r.habitacion where
 
 	public function ver($param=0){
 			$query = "SELECT nro, user_id, (select concat(u.first_name, ' ', u.last_name) from user u where u.id=r.user_id) nombre, 
-room_id, habitacion, estado, check_in, check_out, precio, 
+room_id, habitacion, status_res, check_in, check_out, precio, 
 DATEDIFF(check_out,check_in) as total_dias, 
 (c.price * DATEDIFF(check_out,check_in) * 
  (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))
 ) as precio_total 
 FROM reserva r INNER JOIN category c on c.id=r.habitacion 
-			WHERE  estado = $param
+			WHERE  status_res = $param
 			AND user_id = ".SESSION::getvalue('userid');
 			$result = $this->dbc->query($query);
 		if ($result){

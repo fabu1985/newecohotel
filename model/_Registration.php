@@ -25,7 +25,7 @@ Class _Registration{
 		`nombre`, 
 		`room_id`, 
 		`habitacion`, 
-		`estado`,
+		`status_res`,
     `check_in`,
      `check_out`, 
 		`precio`) values (
@@ -92,7 +92,7 @@ Class _Registration{
 
 	public function updateStatus($id, $status){
 		$query = "UPDATE `registration` set `status`=$status where `id`=$id";
-		$query2 = "UPDATE `reserva` set `estado`=$status where `nro`=$id";
+		$query2 = "UPDATE `reserva` set `status_res`=$status where `nro`=$id";
 		$this->dbc->query($query2);
 		if ($this->dbc->query($query)){
 			return "success";

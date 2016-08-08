@@ -139,9 +139,9 @@
                   <tbody id="resultadoC">
                     [listaServicios]
                     <tr>
-                      <td>{habitacion}</td>
+                      <td>{room}</td>
                       <td>{service}</td>
-                      <td>{precio}</td>
+                      <td>{priceservice}</td>
                       <td>{servicedate}</td>
                     </tr>
                     [listaServicios]

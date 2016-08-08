@@ -57,9 +57,9 @@ public function saveservice($habitacion, $servicio){
 		$precio = '120';
 	}
 	$query = "INSERT INTO services(
-		habitacion,
+		room,
 		service,
-		precio,
+		priceservice,
 		servicedate) values ('$habitacion', '$servicio', '$precio', '$nuevafecha')";
 		if ($this->dbc->query($query)){
 		}else{
@@ -132,7 +132,7 @@ public function saveservice($habitacion, $servicio){
 		}
 
 	public function listaServiciosRegistrados($param=''){
-		$query = 'SELECT s.* from services s where servicedate = curdate() order by habitacion asc';
+		$query = 'SELECT s.* from services s where servicedate = curdate() order by room asc';
 			if ($result = $this->dbc->query($query)){
 				$lista = Ftn::toArray($result);
 				foreach ($lista as $key => $value) {

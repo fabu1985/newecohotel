@@ -155,7 +155,7 @@
                       <div class="col-lg-3">
                         <div class="form-group">
                            <label> N° de Hab.</label>
-                          <select class="form-control" name="habitacion" required>
+                          <select class="form-control" name="room" required>
                               <option></option>
                               [listanum2]
                               <option value="{number}">{number}</option>
@@ -222,9 +222,9 @@
                     <tbody id="resultado">
                       [listaServiciosRegistrados]
                       <tr id="room_{number}">
-                        <td>{habitacion}</td>
+                        <td>{room}</td>
                         <td>{service}</td>
-                        <td>${precio}</td>
+                        <td>${priceservice}</td>
                         <td>{servicedate}</td>
                         <td>
                           <a href="#">
