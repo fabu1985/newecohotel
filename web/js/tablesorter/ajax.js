@@ -39,6 +39,7 @@ $(function(){
 	        	 to: $('#to'+roomId).text()
 	            },
 			    function(data,status){
+			      //window.location.href = "main/misreservas";
 			      var newurl = url.replace('reservar/confirmar','main/misreservas');
 			      $(location).attr('href', newurl);
 			    }

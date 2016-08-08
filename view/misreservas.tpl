@@ -104,8 +104,10 @@
                   </table>
                 </div>
                 <div class="alert alert-info">
-                  <a href="#" class="close" data-dismiss="alert">&times;</a>
-                  <p>Las reservas pendientes para ser registradas como activas deben abonarse al <b>CBU: 3214569874563214569874561.</b> <br/>Una vez realizado el pago informar por mail a reservas@laluna.com <br/>De no realizarse el pago la administración puede dar de baja a su reserva</p>
+                  <a href="#" class="close" data-dismiss="alert"></a>
+                  <p><strong>IMPORTANTE!</strong><p><br/>Para que su reserva tenga validez, deberá abonar el monto correspondiente a la misma. Una vez realizado el pago, la Administración de Ecohotel La Luna realizar la activación dentro de las 24 hs.<br>
+                  <br>En caso, de que en el transcurso de las 24 hs su reserva continúa pendiente o fue cancelada, por favor informar por mail a reservas@laluna.com o comunicarse a nuestros teléfonos.<br>
+                  <p><br/>De no realizarse el pago la administración puede cancelar su reserva. Para pagar haga click <a href="https://www.mercadopago.com.ar/money-transfer" target="_blank">aquí</a>,</p>
               </div>
               <div class="alert alert-info">
                   <a href="#" class="close" data-dismiss="alert">&times;</a>
