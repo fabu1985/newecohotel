@@ -22,7 +22,7 @@ Class _Registration{
 
 	$insertreserva = "INSERT INTO reserva(
 		`user_id`, 
-		`nombre`, 
+		`name`, 
 		`room_id`, 
 		`habitacion`, 
 		`status_res`,
@@ -30,7 +30,7 @@ Class _Registration{
      `check_out`, 
 		`precio`) values (
 		'".SESSION::getvalue('userid')."', 
-		'???', 
+		'', 
 		'$this->room_id',
 		$this->habitacion,
 		0, 

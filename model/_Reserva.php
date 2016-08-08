@@ -23,7 +23,8 @@ Class _Reserva{
 				(select 
 					concat(u.first_name, \' \', u.last_name) 
 				from user u 
-				where u.id=r.user_id) nombre, 
+				where u.id=r.user_id) 
+				name, 
 				room_id, 
 				habitacion, 
 				status_res, 
@@ -50,15 +51,15 @@ Class _Reserva{
 		}
 
 	public function buscar($param){
-			$query = 'SELECT nro, user_id, (select concat(u.first_name, \' \', u.last_name) from user u where u.id=r.user_id) nombre, 
+			$query = 'SELECT nro, user_id, (select concat(u.first_name, \' \', u.last_name) from user u where u.id=r.user_id) name, 
 room_id, habitacion, status_res, check_in, check_out, precio, 
 DATEDIFF(check_out,check_in) as total_dias, 
 (c.price * DATEDIFF(check_out,check_in) * 
  (IF(c.id = 1, 1, IF(c.id=2, 1.2, IF(c.id=3, 1.5, 1))))
 ) as precio_total 
 FROM reserva r INNER JOIN category c on c.id=r.habitacion where 
-				nombre like \''.$param.'%\' 
-				OR nombre like \'%, '.$param.'%\'
+				name like \''.$param.'%\' 
+				OR name like \'%, '.$param.'%\'
 			ORDER BY nro DESC';
 			if ($result = $this->dbc->query($query)){
 				$this->dbc->close();
@@ -71,7 +72,7 @@ FROM reserva r INNER JOIN category c on c.id=r.habitacion where
 
 
 	public function ver($param=0){
-			$query = "SELECT nro, user_id, (select concat(u.first_name, ' ', u.last_name) from user u where u.id=r.user_id) nombre, 
+			$query = "SELECT nro, user_id, (select concat(u.first_name, ' ', u.last_name) from user u where u.id=r.user_id) name, 
 room_id, habitacion, status_res, check_in, check_out, precio, 
 DATEDIFF(check_out,check_in) as total_dias, 
 (c.price * DATEDIFF(check_out,check_in) * 
@@ -97,7 +98,7 @@ FROM reserva r INNER JOIN category c on c.id=r.habitacion
 				}
 
 	public function setNombre($nombre){
-					$this->nombre = $nombre;
+					$this->name = $nombre;
 				}
 
 	public function getNombre(){
