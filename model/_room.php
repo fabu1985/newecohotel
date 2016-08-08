@@ -35,32 +35,32 @@ Class _Room{
 }
 
 
-public function saveservice($habitacion, $service){
+public function saveservice($habitacion, $servicio){
 	$precio = 0;
 	//$fecha = date('Y-m-1',time());
 	$servicedate = date('Y-m-d');
 	$nuevafecha = strtotime ( '-0 day' , strtotime ( $servicedate ) ) ;
 	$nuevafecha = date ( 'Y-m-d' , $nuevafecha );
-	if($service == 'Wifi'){
+	if($servicio == 'Wifi'){
 		$precio = '15';
 	}
-	if($service == 'Desayuno'){
+	if($servicio == 'Desayuno'){
 		$precio = '60';
 	}
-	if($service == 'Almuerzo'){
+	if($servicio == 'Almuerzo'){
 		$precio = '90';
 	}
-	if($service == 'Merienda'){
+	if($servicio == 'Merienda'){
 		$precio = '60';
 	}
-	if($service == 'Cena'){
+	if($servicio == 'Cena'){
 		$precio = '120';
 	}
 	$query = "INSERT INTO services(
 		habitacion,
 		service,
 		precio,
-		servicedate) values ('$habitacion', '$service', '$precio', '$nuevafecha')";
+		servicedate) values ('$habitacion', '$servicio', '$precio', '$nuevafecha')";
 		if ($this->dbc->query($query)){
 		}else{
 			die('Error de Conexion con la DB: '.$query);

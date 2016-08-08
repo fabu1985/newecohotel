@@ -1,6 +1,13 @@
 Nro_Habitación;Servicio;Precio;Fecha
-2;Desayuno;60;2016-08-06
-4;Wifi;15;2016-08-06
-2;Wifi;15;2016-08-06
+4;Desayuno;60;2016-08-08
+2;;0;2016-08-08
+1;Almuerzo;90;2016-08-08
+3;Merienda;25;2016-06-20
+1;Desayuno;25;2016-06-28
+1;Desayuno;25;2016-06-28
+2;Cena;55;2016-06-14
+3;Almuerzo;50;2016-06-28
+3;Almuerzo;50;2016-06-27
+2;Desayuno;25;2016-06-28
 ;;;;
-"Jefe de Reserva:";"Mendez, Juan";Fecha:;07-08-2016
+"Jefe de Reserva:";"Diaz Poslemn, Fabiana";Fecha:;08-08-2016

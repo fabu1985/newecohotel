@@ -166,7 +166,7 @@
                       <div class="col-lg-4">
                         <div class="form-group">
                           <label> Servicio </label>
-                          <select class="form-control" name="servicio" required>
+                          <select class="form-control" name="service" required>
                             <option></option>
                             <option value="Wifi">Wifi</option>
                             <option value="Desayuno">Desayuno</option>

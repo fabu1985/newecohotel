@@ -181,8 +181,8 @@ class Admin{
 
 	public static function eliminarServicio(){
 		if (isset($_POST) && !empty($_POST['id'])){
-			$servicio = new _room();
-			$servicio->deleteService($_POST['id']);
+			$service = new _room();
+			$service->deleteService($_POST['id']);
 		}else{
 		}
 	}
